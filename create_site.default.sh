@@ -57,7 +57,7 @@ echo "* Création de la base de donnée sur `hostname` - OK\n"
 MYSQL=`which mysql`
  
 Q1="CREATE DATABASE IF NOT EXISTS $destination;"
-Q2="CREATE USER '$destination'@'localhost' IDENTIFIED BY '$password';"
+Q2="CREATE USER '$destination'@'$MYSQL_HOST' IDENTIFIED BY '$password';"
 
 Q4="GRANT ALL PRIVILEGES ON \`$destination\`.* TO '$destination'@'$MYSQL_HOST' WITH GRANT OPTION;"
 
