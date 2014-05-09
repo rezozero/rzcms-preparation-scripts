@@ -52,6 +52,15 @@ ln -s ../$CMS_REL_DIR/templates/administration ./templates
 
 echo "* Création du lien symbolique pour le template Administration - OK"
 
+# Downlod default template
+GIT=`which git`
+
+cd $APACHE_ROOT$destination/templates
+$GIT clone https://github.com/rezozero/rzcms-default-template.git
+echo "* Téléchargement du template par défaut depuis Github - OK"
+
+cd $APACHE_ROOT$destination
+
 echo "* Création de la base de donnée sur `hostname` - OK\n"
 
 MYSQL=`which mysql`
